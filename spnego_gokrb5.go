@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 // +build !windows
 
 package spnego
