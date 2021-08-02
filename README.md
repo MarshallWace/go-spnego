@@ -13,13 +13,13 @@ Currently it allows only to make HTTP calls, no server side support yet.
 ### Installation
 
 ```
-go get github.com/dpotapov/go-spnego
+go get github.com/MarshallWace/go-spnego
 ```
 
 ### Usage example
 
 ```
-import "github.com/dpotapov/go-spnego"
+import "github.com/MarshallWace/go-spnego"
 ...
 c := &http.Client{
     Transport: &spnego.Transport{},

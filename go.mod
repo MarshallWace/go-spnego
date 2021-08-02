@@ -1,4 +1,4 @@
-module github.com/dpotapov/go-spnego
+module github.com/MarshallWace/go-spnego
 
 go 1.12
 
