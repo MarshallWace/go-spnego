@@ -18,7 +18,7 @@ go get github.com/MarshallWace/go-spnego
 
 ### Usage example
 
-```
+```go
 import "github.com/MarshallWace/go-spnego"
 ...
 c := &http.Client{
@@ -26,6 +26,20 @@ c := &http.Client{
 }
 
 resp, err := c.Get("http://kerberized.service.com/")
+```
+
+To set normal http.Transport options:
+
+```go
+import "github.com/MarshallWace/go-spnego"
+...
+c := &http.Client{
+        Transport: &spnego.Transport{
+                Transport: http.Transport{
+                        DisableCompression: true,
+                },
+        },
+}
 ```
 
 ### Configuration
