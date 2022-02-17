@@ -28,7 +28,7 @@ c := &http.Client{
 resp, err := c.Get("http://kerberized.service.com/")
 ```
 
-To set normal http.Transport options:
+To set normal `http.Transport` options:
 
 ```go
 import "github.com/MarshallWace/go-spnego"
