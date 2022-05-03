@@ -19,12 +19,9 @@ func New() Provider {
 
 // SetSPNEGOHeader puts the SPNEGO authorization header on HTTP request object
 func (s *sspi) SetSPNEGOHeader(req *http.Request, canonicalize bool) error {
-	h := req.URL.Hostname()
-	if canonicalize {
-		var err error
-		if h, err = canonicalizeHostname(h); err != nil {
-			return err
-		}
+	h, err := getHostname(req, canonicalize)
+	if err != nil {
+		return err
 	}
 	spn := "HTTP/" + h
 
