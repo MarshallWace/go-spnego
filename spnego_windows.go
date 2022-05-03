@@ -19,7 +19,7 @@ func New() Provider {
 
 // SetSPNEGOHeader puts the SPNEGO authorization header on HTTP request object
 func (s *sspi) SetSPNEGOHeader(req *http.Request, canonicalize bool) error {
-	h := req.URL.Hostname()
+	h := req.URL.Host // SPN should contain the port, if non-standard (https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spn-setspn-syntax.aspx)
 	if canonicalize {
 		var err error
 		if h, err = canonicalizeHostname(h); err != nil {
